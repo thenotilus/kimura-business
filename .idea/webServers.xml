@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b45f0df5-c44c-4f19-b1ae-67ed413640e8" name="KIMURA BUSINESS (ON FIQR)">
+        <fileTransfer rootFolder="/var/app/kimura-business" accessType="SFTP" host="165.227.254.31" port="22" sshConfigId="badec563-ebb3-4e4b-9e15-b34c1a4ab424" sshConfig="root@165.227.254.31:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
