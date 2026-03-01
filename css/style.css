@@ -91,7 +91,7 @@ nav.navbar {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hotel-3.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hotel-1.png') center/cover no-repeat;
     min-height: 80vh;
 }
 
