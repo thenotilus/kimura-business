@@ -356,8 +356,8 @@
 <!-- Partners Section -->
 <section id="partners" class="section py-6">
     <div class="container">
-        <h2 class="title section-title has-text-centered is-size-1 is-size-2-mobile fadeInUp">Our Partners</h2>
-        <p class="is-size-5 has-text-centered">We are supported by selected partner brands who place their trust in us across specific retreats.</p>
+        <h2 class="title section-title has-text-centered is-size-1 is-size-2-mobile fadeInUp mb-0">Our Partners</h2>
+        <p class="is-size-5 has-text-centered mt-2">We are supported by selected partner brands who place their trust in us across specific retreats.</p>
         <!-- Logo Carousel -->
         <div class="carousel-container mb-6 fadeInUp delay-1 is-hidden">
             <div class="carousel-track">
@@ -612,7 +612,7 @@
                     <div class="faq-answer mt-3" style="display: none;">
                         <p>Participation is subject to application and validation. To express your interest, you can
                             complete our application questionnaire, contact us via Instagram DM at @kimura.camp, email
-                            us at contact@kimura.camp, or book a call via our Calendly.</p>
+                            us at contact@kimura.camp.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -633,6 +633,12 @@
 <footer class="footer">
     <div class="container content-constrained">
         <div class="footer__content has-text-centered mb-5">
+            <div class="buttons is-centered mt-6 fadeInUp delay-2">
+                <button class="button is-primary is-large is-continuous js-modal-trigger"
+                        data-target="modal-apply">
+                    Apply to Join
+                </button>
+            </div>
             <div class="footer__items-outer">
                 <ul class="footer__items">
                     <li class="footer__item">
@@ -686,7 +692,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
-            <p class="modal-card-title">Apply for Business Connect 2026</p>
+            <p class="modal-card-title title">Apply for Business Connect 2026</p>
             <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -709,95 +715,8 @@
             </div>
         </section>
     </div>
-</div>
+</div>l
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Navbar Burger
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(el => {
-                el.addEventListener('click', () => {
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
-                    el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
-
-        // Modals
-        function openModal($el) {
-            $el.classList.add('is-active');
-        }
-
-        function closeModal($el) {
-            $el.classList.remove('is-active');
-        }
-
-        function closeAllModals() {
-            (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                closeModal($modal);
-            });
-        }
-
-        (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-            const modal = $trigger.dataset.target;
-            const $target = document.getElementById(modal);
-
-            $trigger.addEventListener('click', () => {
-                openModal($target);
-            });
-        });
-
-        (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-            const $target = $close.closest('.modal');
-
-            $close.addEventListener('click', () => {
-                closeModal($target);
-            });
-        });
-
-        document.addEventListener('keydown', (event) => {
-            const e = event || window.event;
-            if (e.keyCode === 27) { // Escape key
-                closeAllModals();
-            }
-        });
-
-        // Intersection Observer for Scroll Animations
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // Once animated, we can stop observing this element
-                    animationObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
-        });
-
-        // Observe all elements with animation classes
-        const animatedElements = document.querySelectorAll('.fadeInUp, .fadeIn');
-        animatedElements.forEach(el => animationObserver.observe(el));
-
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
-                if (answer.style.display === 'none') {
-                    answer.style.display = 'block';
-                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                } else {
-                    answer.style.display = 'none';
-                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                }
-            });
-        });
-    });
-</script>
+<script src="js/private.js"></script>
 </body>
 </html>

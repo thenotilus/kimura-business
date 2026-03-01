@@ -142,7 +142,16 @@ a.navbar-item:hover {
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: 700;
-    margin-bottom: 6rem !important;
+    margin-bottom: 6rem;
+}
+
+.modal-card-title.title {
+    flex-shrink: 1;
+    margin-bottom: 0;
+}
+
+.modal-card .modal-card-head {
+    padding: 1.3rem 0.3rem;
 }
 
 .card {
