@@ -1,0 +1,52 @@
+.markdown-content {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    color: var(--accent-gold);
+    font-family: var(--font-primary), serif;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.markdown-content h1 {
+    font-size: 2.5rem;
+}
+
+.markdown-content h2 {
+    font-size: 2rem;
+    padding-bottom: 0.5rem;
+}
+
+.markdown-content h3 {
+    font-size: 1.5rem;
+}
+
+.markdown-content p {
+    margin-bottom: 1rem;
+}
+
+.markdown-content ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+.markdown-content li {
+    margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+.markdown-content hr {
+    background-color: rgba(197, 160, 89, 0.2);
+    margin: 2rem 0;
+}
+
+.markdown-content strong {
+    color: #fff;
+}

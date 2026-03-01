@@ -214,8 +214,15 @@ Participants wishing to arrive earlier or stay longer at the Hyatt Place Taghazo
 
 Our team will assist with availability and preferential rates.
 
-[Photos](https://www.notion.so/Photos-300bb034ab7a80a38f93de9891276b9f?pvs=21)
+## Partners
 
-[Agenda](https://www.notion.so/Agenda-302bb034ab7a8079ac9ded3de2cffdea?pvs=21)
+The partners of Business Connect are:
+- Venum
+- Nutrimea
+- Cleanhugs
+- Rocean
 
-[❓Questionnaire](https://www.notion.so/Questionnaire-310bb034ab7a804ea742dfeb683de66a?pvs=21)
+Show partners logo in a simple carousel and create a detailed sub-section for each partner.
+Logos are in the images directory. In sub-section partners are showed next to a short description and two pictures illustrating the partnership with Kimura Camp.
+No links are needed.
+

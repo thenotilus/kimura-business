@@ -26,18 +26,30 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Balrow-ExtraBold';
+    src: url('../css/fonts/Barlow-ExtraBold.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balrow-Light';
+    src: url('../css/fonts/Barlow-Light.ttf') format('truetype');
+    font-style: normal;
+}
+
 :root {
     --primary-dark: #121212;
     --accent-gold: #c5a059;
     --text-light: #f5f5f5;
     --bulma-strong-color: #dddddd;
-    --font-primary: 'Montserrat', sans-serif;
-    --font-secondary: 'Inter', sans-serif;
+    --font-primary: 'Balrow-ExtraBold', sans-serif;
+    --font-secondary: 'Balrow-Light', sans-serif;
     --font-accent: 'Libre Baskerville', serif;
 }
 
 body {
-    font-family: var(--font-secondary);
+    font-family: var(--font-secondary), serif;
     background-color: var(--primary-dark);
     color: var(--text-light);
 }
@@ -89,7 +101,7 @@ nav.navbar {
 
 .hero .subtitle {
     color: var(--text-light);
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary), serif;
     opacity: 0.9;
 }
 
@@ -162,6 +174,77 @@ a.navbar-item:hover {
     justify-content: space-between;
     align-items: center;
     font-size: 1.3rem;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 4)); }
+}
+
+.carousel-container {
+    overflow: hidden;
+    padding: 2rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    width: calc(250px * 8);
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-item {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.carousel-item img {
+    max-height: 80px;
+    width: auto;
+    filter: grayscale(100%) brightness(1.5);
+    transition: filter 0.3s ease;
+}
+
+.carousel-item img:hover {
+    filter: grayscale(0%) brightness(1);
+}
+
+.partner-item {
+    border-bottom: 0 solid rgba(197, 160, 89, 0.2);
+}
+
+.partner-item:last-child {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 768px) {
+    .is-reversed-mobile {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+    
+    .carousel-track {
+        width: calc(150px * 8);
+        animation: scroll-mobile 15s linear infinite;
+    }
+    
+    .carousel-item {
+        width: 150px;
+        padding: 0 20px;
+    }
+    
+    .carousel-item img {
+        max-height: 50px;
+    }
+
+    @keyframes scroll-mobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-150px * 4)); }
+    }
 }
 
 .footer {
