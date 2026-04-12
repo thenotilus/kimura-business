@@ -83,4 +83,112 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Agenda Carousel
+    const agendaSlides = document.getElementById('agendaSlides');
+    if (agendaSlides) {
+        const slides = document.querySelectorAll('.agenda-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function getItemsPerView() {
+            return window.innerWidth > 768 ? 3 : 1;
+        }
+
+        function updateCarousel() {
+            const itemsPerView = getItemsPerView();
+            const maxSlide = slides.length - itemsPerView;
+            if (currentSlide > maxSlide) currentSlide = maxSlide;
+            if (currentSlide < 0) currentSlide = 0;
+
+            const offset = (currentSlide * (100 / itemsPerView));
+            agendaSlides.style.transform = `translateX(-${offset}%)`;
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('is-active', index === Math.floor(currentSlide / itemsPerView));
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                currentSlide = Math.max(0, currentSlide - itemsPerView);
+                updateCarousel();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                const maxSlide = slides.length - itemsPerView;
+                currentSlide = Math.min(maxSlide, currentSlide + itemsPerView);
+                updateCarousel();
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                currentSlide = index * itemsPerView;
+                updateCarousel();
+            });
+        });
+
+        window.addEventListener('resize', updateCarousel);
+    }
+
+    // Lock Screen Logic
+    const lockScreen = document.getElementById('lockScreen');
+    if (lockScreen) {
+        const inputs = document.querySelectorAll('.code-input');
+        const correctCode = '2607';
+
+        // Check if already unlocked
+        if (localStorage.getItem('kimura_unlocked') === 'true') {
+            lockScreen.classList.add('is-hidden');
+            document.body.style.overflow = 'auto';
+        } else {
+            document.body.style.overflow = 'hidden';
+            // Auto focus first input
+            setTimeout(() => inputs[0].focus(), 500);
+        }
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                // Only allow numbers
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                
+                if (e.target.value.length === 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+                
+                // Check if all inputs are filled
+                const code = Array.from(inputs).map(i => i.value).join('');
+                if (code.length === 4) {
+                    if (code === correctCode) {
+                        localStorage.setItem('kimura_unlocked', 'true');
+                        lockScreen.classList.add('is-hidden');
+                        document.body.style.overflow = 'auto';
+                    } else {
+                        inputs.forEach(i => {
+                            i.classList.add('is-error');
+                            setTimeout(() => i.classList.remove('is-error'), 500);
+                            i.value = '';
+                        });
+                        inputs[0].focus();
+                    }
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+    }
 });
