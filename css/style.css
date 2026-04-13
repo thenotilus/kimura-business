@@ -708,3 +708,39 @@ a.navbar-item:hover {
     font-size: 0.9rem;
     color: #888;
 }
+/* Accommodation Carousel Fade */
+.accommodation-carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.carousel-fade-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-fade-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade-slide.is-active {
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .accommodation-carousel {
+        height: 250px;
+    }
+}

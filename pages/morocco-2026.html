@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="../css/bulma/bulma.min.css">
     <link rel="stylesheet" href="../css/fontawesome/all.min.css">
-    <link rel="stylesheet" href="../css/style.css?v=1.3">
+    <link rel="stylesheet" href="../css/style.css?v=1.4">
     <link rel="icon" type="image/ico" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../images/logo.png">
 
@@ -214,10 +214,7 @@
             <img src="../images/logo.png" alt="Kimura Logo" class="lock-logo">
             <h2 class="title is-4 mb-5">ACCESS CODE REQUIRED</h2>
             <div class="code-inputs">
-                <input type="text" maxlength="1" class="code-input" inputmode="numeric">
-                <input type="text" maxlength="1" class="code-input" inputmode="numeric">
-                <input type="text" maxlength="1" class="code-input" inputmode="numeric">
-                <input type="text" maxlength="1" class="code-input" inputmode="numeric">
+                <input type="text" maxlength="4" class="code-input" inputmode="numeric" style="width: 200px; letter-spacing: 1rem; padding-left: 1rem;">
             </div>
             <p class="lock-message">Please enter the 4-digit invitation code to view the details.</p>
         </div>
@@ -230,7 +227,7 @@
 <nav class="navbar is-transparent is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://www.kimura.camp" target="_blank">
+            <a class="navbar-item" href="https://business.kimura.camp" target="_blank">
                 <img src="../images/logo.png" alt="KIMURA CAMP LOGO">
             </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
@@ -386,13 +383,19 @@
 <!-- Accommodation Options Section -->
 <section id="accommodation" class="section content-section bg-dark-alt">
     <div class="container content-constrained">
-        <h2 class="title section-title has-text-centered is-size-2 mb-6">Accommodation Options</h2>
+        <h2 class="title section-title has-text-centered is-size-3 mb-6">Accommodation Options</h2>
         
         <div class="columns is-multiline">
             <!-- Individual Room -->
             <div class="column is-6">
                 <div class="feature-card">
-                    <img src="../images/hotel-7.png" alt="Individual Room" class="venue-img mb-4" style="height: 300px;">
+                    <div class="accommodation-carousel" data-interval="3000">
+                        <div class="carousel-fade-slides">
+                            <img src="../images/bedroom-1.jpg" alt="Individual Room 1" class="carousel-fade-slide is-active">
+                            <img src="../images/bedroom-2.png" alt="Individual Room 2" class="carousel-fade-slide">
+                            <img src="../images/bedroom-3.png" alt="Individual Room 3" class="carousel-fade-slide">
+                        </div>
+                    </div>
                     <h3 class="title is-size-4 mb-3" style="color: var(--accent-gold);">Individual Room (Ocean View)</h3>
                     <div class="content">
                         <p>Modern and comfortable rooms with private terrace or balcony, offering ocean views and a calm environment to relax and recharge.</p>
@@ -405,7 +408,13 @@
             <!-- 3-Bedroom Villa -->
             <div class="column is-6">
                 <div class="feature-card">
-                    <img src="../images/hotel-8.jpeg" alt="3-Bedroom Villa" class="venue-img mb-4" style="height: 300px;">
+                    <div class="accommodation-carousel" data-interval="3500">
+                        <div class="carousel-fade-slides">
+                            <img src="../images/hotel-8.jpeg" alt="3-Bedroom Villa 1" class="carousel-fade-slide is-active">
+                            <img src="../images/villa-bedroom.png" alt="3-Bedroom Villa 2" class="carousel-fade-slide">
+                            <img src="../images/hotel-9.png" alt="3-Bedroom Villa 3" class="carousel-fade-slide">
+                        </div>
+                    </div>
                     <h3 class="title is-size-4 mb-3" style="color: var(--accent-gold);">3-Bedroom Villa</h3>
                     <div class="content">
                         <p>Spacious private villas with three bedrooms, shared living areas and outdoor spaces with a private pool.</p>
@@ -629,13 +638,13 @@
                 <div class="feature-card">
                     <h3 class="title is-size-4 mb-4" style="color: var(--accent-gold);">Finalize your Registration</h3>
                     <div class="content is-size-5">
-                        <p class="mb-4">Once your application is validated, please send the following information to <strong>contact@kimura.camp</strong>:</p>
+                        <p class="mb-4">To confirm your participation, please email <strong>contact@kimura.camp</strong> with: </p>
                         <ul class="is-size-6 mb-5 unstyled-list">
-                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Copy of your ID / Passport</li>
-                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Proof of professional status (Kbis, LinkedIn profile, etc.)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Your choices: Track (Kickboxing or BJJ), Accommodation, Billing information</li>
+                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Your selected training track (🥊 Kickboxing, 🥋 Brazilian Jiu-Jitsu, or both)</li>
+                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Room preference and number of nights</li>
+                            <li class="mb-2"><i class="fas fa-check-circle mr-2" style="color: var(--accent-gold);"></i> Billing details (full name or company name (+ VAT number) , email, postal address). </li>
                         </ul>
-                        <p class="is-size-6 has-text-grey-light">You will then receive a secure payment link to confirm your spot.</p>
+                        <p class="is-size-6 has-text-grey-light">You will then receive an email with a secure payment link covering both the retreat and your accommodation at the Hyatt.</p>
                     </div>
                 </div>
 
@@ -736,6 +745,6 @@
     </div>
 </div>
 
-<script src="../js/private.js"></script>
+<script src="../js/private.js?v=1.5"></script>
 </body>
 </html>
