@@ -68,12 +68,11 @@
                 <a class="navbar-item" href="#partners">Partners</a>
                 <a class="navbar-item" href="#gallery">Gallery</a>
                 <a class="navbar-item" href="#faq">FAQ</a>
-                <a class="navbar-item" href="#registration" style="color: var(--accent-gold); font-weight: bold;">Registration</a>
                 <div class="navbar-item">
                     <div class="buttons">
-                        <button class="button is-primary is-continuous js-modal-trigger" data-target="modal-apply">
+                        <a class="button is-primary is-continuous" href="#registration">
                             Apply Now
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -86,7 +85,7 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-centered">
-                <div class="column is-8">
+                <div class="column is-8 mt-6 fadeInUp">
                     <p class="subtitle is-spaced is-size-4-tablet section-title mb-6 is-hidden-mobile is-hidden-tablet"
                        style="font-family: var(--font-primary); font-style: normal; letter-spacing: 3px; opacity: 1;">
                         Where Business Meets the Martial Arts Mindset
@@ -100,10 +99,9 @@
                         in an exceptional setting in Taghazout, Morocco.
                     </p>
                     <div class="buttons is-centered mt-6 fadeInUp delay-2">
-                        <button class="button is-primary is-large is-continuous js-modal-trigger"
-                                data-target="modal-apply">
+                        <a class="button is-primary is-large is-continuous" href="#registration">
                             Apply to Join
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -681,31 +679,33 @@
 <!-- Registration Section -->
 <section id="registration" class="section content-section">
     <div class="container content-constrained">
-        <h2 class="title section-title has-text-centered is-size-2 mb-6">REGISTRATION</h2>
+        <h2 class="title section-title has-text-centered is-size-2 mb-3">REGISTRATION</h2>
         <div class="columns is-centered">
             <div class="column is-8">
                 <div class="feature-card has-text-centered p-6">
-                    <p class="is-size-4 mb-6" style="line-height: 1.6;">
-                        To ensure group quality and alignment, participation is subject to application and validation.
-                    </p>
-                    <p class="is-size-5 mb-6 has-text-grey-light">
-                        Click below to fill out our application questionnaire and receive your access code
-                    </p>
-                    
+                    <!-- Step 1: Code Access -->
                     <div class="mb-6">
-                        <button class="button is-primary is-continuous js-modal-trigger" data-target="modal-apply">
-                            Apply Now
-                        </button>
+                        <h3 class="title is-4 mb-4" style="color: var(--accent-gold); text-transform: uppercase;">Enter your access code</h3>
+                        <p class="mb-5 has-text-grey">Already have a code? Enter your 4-digit code to access the registration page</p>
+                        
+                        <div id="registrationLock" class="is-flex is-justify-content-center">
+                            <input type="text" maxlength="4" class="code-input reg-code" placeholder="0000" inputmode="numeric" style="width: 200px; letter-spacing: 1rem; padding-left: 1rem;">
+                        </div>
+                        <p id="regErrorMessage" class="has-text-danger mt-3 is-hidden">Incorrect code. Please try again.</p>
                     </div>
 
                     <div style="border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 3rem; margin-top: 3rem;">
-                        <h3 class="title is-4 mb-4" style="color: var(--accent-gold);">ALREADY HAVE A CODE?</h3>
-                        <p class="mb-5 has-text-grey">Enter your 4-digit code to access the event details</p>
+                        <!-- Step 2: Questionnaire -->
+                        <h3 class="title is-4 mb-4" style="color: var(--accent-gold); text-transform: uppercase;">Request access</h3>
+                        <p class="is-size-5 mb-6" style="line-height: 1.6;">
+                            To access the registration page, fill this short questionnaire and you will receive the 4 digits code to access the registration page
+                        </p>
                         
-                        <div id="registrationLock" class="is-flex is-justify-content-center">
-                            <input type="text" maxlength="4" class="code-input reg-code" inputmode="numeric" style="width: 200px; letter-spacing: 1rem; padding-left: 1rem;">
+                        <div class="mb-4">
+                            <a class="button is-primary is-continuous" href="https://form.typeform.com/to/TELtz0C0" target="_blank">
+                                Open Questionnaire
+                            </a>
                         </div>
-                        <p id="regErrorMessage" class="has-text-danger mt-3 is-hidden">Incorrect code. Please try again.</p>
                     </div>
                 </div>
             </div>
@@ -764,36 +764,6 @@
         </div>
     </div>
 </footer>
-
-<!-- Modal Apply -->
-<div id="modal-apply" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title title">Apply for Business Connect 2026</p>
-            <button class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-            <div class="content">
-                <p class="has-text-centered">To ensure group quality and alignment, participation is subject to application and validation.</p>
-                <p class="has-text-centered">Click below to fill out our application questionnaire :</p>
-                <div class="has-text-centered py-4">
-                    <a href="https://form.typeform.com/to/TELtz0C0"
-                       target="_blank" class="button is-primary is-large">
-                        Open Questionnaire
-                    </a>
-                </div>
-                <hr>
-                <p>Alternative contact methods:</p>
-                <ul>
-                    <li>Instagram: <a href="https://www.instagram.com/kimura.camp" style="color: var(--accent-gold);"
-                                      target="_blank">@kimura.camp</a></li>
-                    <li>Email: contact@kimura.camp</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-</div>l
 
 <script src="js/private.js?v=1.6"></script>
 </body>
